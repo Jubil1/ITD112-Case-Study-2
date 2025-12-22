@@ -66,8 +66,6 @@ https://github.com/user-attachments/assets/e305b136-7317-4af5-8299-034053612b66
 - **Icons**: React Icons
 
 ## 📁 Project Structure
-
-## 📁 Project Structure
 ```
 case-study-2/
 ├── .tanstack/                      # TanStack Query cache
