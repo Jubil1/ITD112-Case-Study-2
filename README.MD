@@ -41,6 +41,11 @@ npm run dev
 
 The dashboard will be available at `http://localhost:3000`
 
+## Video Demo
+```
+https://github.com/user-attachments/assets/e305b136-7317-4af5-8299-034053612b66
+```
+
 ## 📊 Features
 
 - **Geographic Visualization**: Interactive choropleth maps showing emigrant distribution
