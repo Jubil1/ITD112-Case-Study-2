@@ -67,15 +67,131 @@ https://github.com/user-attachments/assets/e305b136-7317-4af5-8299-034053612b66
 
 ## 📁 Project Structure
 
+## 📁 Project Structure
 ```
-src/
-├── api/              # Firebase service layer
-├── components/       # Reusable UI components
-├── context/          # React context providers
-├── hooks/            # Custom React hooks
-├── routes/           # Route components
-└── utils/            # Utility functions
+case-study-2/
+├── .tanstack/                      # TanStack Query cache
+├── config/                         # Configuration files
+├── docs/                          # Documentation
+│   ├── architecture/
+│   │   └── PROJECT_STRUCTURE.md
+│   ├── guides/
+│   │   ├── CHOROPLETH_INTEGRATION_GUIDE.md
+│   │   ├── CRUD_ARCHITECTURE.md
+│   │   ├── CRUD_DEPLOYMENT_CHECKLIST.md
+│   │   ├── CRUD_GUIDE.md
+│   │   ├── CRUD_IMPLEMENTATION_SUMMARY.md
+│   │   ├── CRUD_QUICK_REFERENCE.md
+│   │   ├── CSV_DATA_EXPLANATION.md
+│   │   ├── CSV_FORMAT_GUIDE.md
+│   │   ├── FIRESTORE_RULES_SETUP.md
+│   │   ├── PAGES_GUIDE.md
+│   │   └── PAGES_QUICK_REFERENCE.md
+│   └── issues/                    # Known issues and solutions
+├── node_modules/                  # Dependencies
+├── public/                        # Static assets
+│   ├── data/                     # CSV data files
+│   │   ├── processed/            # Cleaned/processed CSV files
+│   │   └── raw/                  # Original CSV files
+│   │       ├── Age-Clean.csv
+│   │       ├── CivilStatus-Clean.csv
+│   │       ├── Countries-Clean.csv
+│   │       ├── Education-Clean.csv
+│   │       ├── MajorCountries-Clean.csv
+│   │       ├── Occupation-Clean.csv
+│   │       ├── PlaceOfOrigin-Clean.csv
+│   │       └── Sex-Clean.csv
+│   └── robots.txt
+├── src/
+│   ├── api/                      # Firebase service layer
+│   │   ├── baseService.ts        # Base service with common operations
+│   │   ├── destinationService.ts # Destination data CRUD operations
+│   │   └── originService.ts      # Origin data CRUD operations
+│   ├── components/               # Reusable UI components
+│   │   ├── charts/              # Chart components
+│   │   ├── DataPopulationButton.tsx
+│   │   ├── header.tsx
+│   │   ├── loadingScreen.tsx
+│   │   └── navBar.tsx
+│   ├── context/                  # React context providers
+│   │   └── navBarContext.tsx
+│   ├── data/                    # Data management
+│   │   ├── processed/           # Processed data
+│   │   └── raw/                 # Raw CSV data
+│   ├── hooks/                   # Custom React hooks
+│   │   ├── useComparisonData.ts
+│   │   ├── useCompositionData.ts
+│   │   ├── useDashboardStats.ts
+│   │   ├── useDistributionData.ts
+│   │   ├── useGeoJSON.ts
+│   │   ├── useIsMobile.ts
+│   │   ├── useNavBarWidth.ts
+│   │   ├── useParseAllDestinationData.ts
+│   │   ├── useParseOriginProvinceData.ts
+│   │   ├── useRelationshipData.ts
+│   │   ├── useTrendData.ts
+│   │   └── useYearFilter.ts
+│   ├── routes/                  # Page/Route components
+│   │   ├── _root.tsx           # Root layout
+│   │   ├── comparison.tsx      # Comparison visualizations
+│   │   ├── composition.tsx     # Composition analysis
+│   │   ├── crud.tsx           # CRUD operations page
+│   │   ├── distribution.tsx    # Distribution charts
+│   │   ├── geographic.tsx      # Geographic/map visualizations
+│   │   ├── index.tsx          # Landing/home page
+│   │   ├── parallel.tsx       # Parallel coordinates
+│   │   ├── radar.tsx          # Radar charts
+│   │   ├── relationships.tsx   # Relationship analysis
+│   │   ├── trends.tsx         # Trend analysis
+│   │   └── upload.tsx         # CSV upload page
+│   ├── scripts/                # Utility scripts
+│   ├── types/                  # TypeScript type definitions
+│   ├── utils/                  # Utility functions
+│   │   ├── countryMapping.ts
+│   │   ├── csvDataPopulation.ts
+│   │   └── normalizeProvince.ts
+│   ├── firebase.ts             # Firebase configuration
+│   ├── main.tsx               # Application entry point
+│   ├── routeTree.gen.ts       # Auto-generated route tree
+│   └── styles.css             # Global styles
+├── .cta.json                   # CTA configuration
+├── .gitignore
+├── convert-csvs.js            # CSV conversion script
+├── firebase-debug.log
+├── firestore.rules            # Firestore security rules
+├── index.html
+├── package.json
+├── package-lock.json
+├── README.MD
+├── tsconfig.json              # TypeScript configuration
+└── vite.config.ts             # Vite configuration
 ```
+
+### Key Directories Explained
+
+#### `/src/api` - Firebase Service Layer
+Base services and CRUD operations for interacting with Firestore database. Handles all data persistence operations.
+
+#### `/src/components` - UI Components
+Reusable React components including charts, navigation, loading states, and data population controls.
+
+#### `/src/context` - State Management
+React Context providers for managing global application state (e.g., navigation bar state).
+
+#### `/src/hooks` - Custom Hooks
+Custom React hooks for data fetching, parsing CSV files, filtering, and responsive design utilities.
+
+#### `/src/routes` - Pages
+TanStack Router route components representing different pages/views in the application.
+
+#### `/src/utils` - Utilities
+Helper functions for data normalization, country mapping, and CSV data population.
+
+#### `/public/data` - Data Files
+Raw and processed CSV files containing demographic and migration data organized by category (age, education, occupation, etc.).
+
+#### `/docs` - Documentation
+Comprehensive guides covering CRUD operations, data formats, Firebase setup, deployment checklists, and architecture decisions.
 
 ## 🔥 Firebase Configuration
 
